@@ -7,8 +7,8 @@ import Input from './components/input/input';
 
 function App() {
   
-  const inicial = 1;
-  const final = 10;
+  const inicial = 100;
+  const final = 200;
   const [sorteado, setSorteado] = useState(null);
   const [palpite, setPalpite] = useState(null);
   const [tentativas, setTentativas] = useState(0);
@@ -19,10 +19,14 @@ function App() {
 
   function chutar(){
     const palpiteInput = document.querySelector('.palpiteInput');
-    const palpiteDigitado = palpiteInput.value;
-    setPalpite(palpiteDigitado);
-    setTentativas(tentativas + 1);
-    palpiteInput.value = '';
+    if(palpiteInput.value === '' || palpiteInput.value < inicial || palpiteInput.value > final || isNaN(palpiteInput.value) ){
+      alert(`Digite um número entre ${inicial} e ${final}`)
+    }else{
+      const palpiteDigitado = palpiteInput.value;
+      setPalpite(palpiteDigitado);
+      setTentativas(tentativas + 1);
+      palpiteInput.value = '';
+    }
     
   }
 

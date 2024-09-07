@@ -7,8 +7,8 @@ import Input from './components/input/input';
 
 function App() {
   
-  const inicial = 100;
-  const final = 200;
+  const inicial = 1;
+  const final = 100;
   const [sorteado, setSorteado] = useState(null);
   const [palpite, setPalpite] = useState(null);
   const [tentativas, setTentativas] = useState(0);
@@ -21,6 +21,7 @@ function App() {
     const palpiteInput = document.querySelector('.palpiteInput');
     if(palpiteInput.value === '' || palpiteInput.value < inicial || palpiteInput.value > final || isNaN(palpiteInput.value) ){
       alert(`Digite um número entre ${inicial} e ${final}`)
+      palpiteInput.value = '';
     }else{
       const palpiteDigitado = palpiteInput.value;
       setPalpite(palpiteDigitado);

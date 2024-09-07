@@ -30,6 +30,12 @@ function App() {
     return Number(palpiteDigitado) === Number(sorteado);
   }
 
+  function jogarNovamente(){
+    setSorteado(null);
+    setPalpite(null);
+    setTentativas(0);
+  }
+
   if (sorteado === null){
     SortearNumero();
   }
@@ -46,7 +52,10 @@ function App() {
       : 
       <div>
         {verificarPalpite(Number(palpite)) ? 
-          <Resultado resultado='acertou' palpite={palpite} sorteado={sorteado} tentativas={tentativas}/>
+          <div>
+            <Resultado resultado='acertou' palpite={palpite} sorteado={sorteado} tentativas={tentativas}/>
+            <button type="submit" className="btnPalpitar" onClick={jogarNovamente}>JOGAR NOVAMENTE</button>
+          </div>
           : 
           <div>
             <Resultado resultado='errou' palpite={palpite} sorteado={sorteado}/>

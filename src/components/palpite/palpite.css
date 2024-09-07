@@ -1,0 +1,24 @@
+.palpiteText{
+    width: 95%;
+    padding: 6px;
+    border: 1px solid #EEE;
+    outline: none;
+    color: #686D76;
+}
+
+.palpiteText:focus{
+    border:1px solid #44C3E5 ;
+}
+
+.btnPalpitar{
+    margin-top: 15px;
+    background-color: #44C3E5;
+    color: #FFF;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #EEE;
+    font-size: 20px;
+    font-weight: 600;
+
+}

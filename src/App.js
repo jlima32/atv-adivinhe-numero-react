@@ -1,9 +1,14 @@
 import './App.css';
 import Header from './components/header/header';
+import Palpite from './components/palpite/palpite';
 
 function App() {
   return (
-    <Header />
+    <div className='container'>
+      <Header />
+      <Palpite />
+      
+    </div>
   );
 }
 

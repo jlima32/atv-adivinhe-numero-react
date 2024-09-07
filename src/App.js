@@ -11,6 +11,7 @@ function App() {
   const final = 4;
   const [sorteado, setSorteado] = useState(null);
   const [palpite, setPalpite] = useState(null);
+  const [tentativas, setTentativas] = useState(0);
 
   function SortearNumero(){
       setSorteado(randomInteger(inicial,final));
@@ -19,6 +20,7 @@ function App() {
   function chutar(){
     const palpiteDigitado = document.querySelector('.palpiteText').value;
     setPalpite(palpiteDigitado);
+    setTentativas(tentativas + 1);
     
   }
 
@@ -44,7 +46,7 @@ function App() {
       : 
       <div>
         {verificarPalpite(Number(palpite)) ? 
-          <Resultado resultado='acertou' palpite={palpite} sorteado={sorteado}/>
+          <Resultado resultado='acertou' palpite={palpite} sorteado={sorteado} tentativas={tentativas}/>
           : 
           <div>
             <Resultado resultado='errou' palpite={palpite} sorteado={sorteado}/>

@@ -1,0 +1,18 @@
+.resultado{
+    line-height: 1.8;
+    border-radius: 5px;
+    border: 1px solid;
+    text-align: center;
+}
+
+.acertou{
+    background-color: #EFE;
+    border: 1px solid #DED;
+    color: #9A9;
+}
+
+.errou {
+    background-color: #FEE;
+    border: 1px solid #EDD;
+    color: #A66;
+}

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import './App.css';
 import Header from './components/header/header';
-import Palpite from './components/palpite/palpite';
 import randomInteger from 'random-int';
 import Resultado from './components/resultado/resultado';
+import Input from './components/input/input';
 
 function App() {
   
@@ -18,7 +18,7 @@ function App() {
   }
 
   function chutar(){
-    const palpiteInput = document.querySelector('.palpiteText');
+    const palpiteInput = document.querySelector('.palpiteInput');
     const palpiteDigitado = palpiteInput.value;
     setPalpite(palpiteDigitado);
     setTentativas(tentativas + 1);
@@ -46,7 +46,7 @@ function App() {
       <Header />
       {palpite === null ? 
       <div>
-        <input type="text" name="palpite" className="palpiteText" placeholder={`Digite um numero entre ${inicial} e ${final}`}/>
+        <Input nome='palpiteInput' classe='palpiteInput' placeholder={`Digite um numero entre ${inicial} e ${final}`}/>
         <button type="submit" className="btnPalpitar" onClick={chutar}>CHUTAR</button>
       </div>
       : 
@@ -59,7 +59,7 @@ function App() {
           : 
           <div>
             <Resultado resultado='errou' palpite={palpite} sorteado={sorteado}/>
-            <input type="text" name="palpite" className="palpiteText" placeholder={`Digite um numero entre ${inicial} e ${final}`} />
+            <Input nome='palpiteInput' classe='palpiteInput' placeholder={`Digite um numero entre ${inicial} e ${final}`} />
             <button type="submit" className="btnPalpitar" onClick={chutar}>CHUTAR</button>
           </div>
         }

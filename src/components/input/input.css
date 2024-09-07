@@ -1,0 +1,11 @@
+.palpiteInput{
+    width: 95%;
+    padding: 6px;
+    border: 1px solid #EEE;
+    outline: none;
+    color: #686D76;
+}
+
+.palpiteInput:focus{
+    border:1px solid #44C3E5 ;
+}

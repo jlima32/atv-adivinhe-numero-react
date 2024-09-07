@@ -1,10 +1,10 @@
 import "./palpite.css"
 
-export default function Palpite(){
+export default function Palpite(props){
     
     return <>
         <div className="palpite">
-            <input type="text" name="palpite" className="palpiteText" placeholder="Digite um número entre 0 e 10" />
+            <input type="text" name="palpite" className="palpiteText" placeholder={`Digite um numero entre ${props.inicial} e ${props.final}`} />
             <button type="submit" className="btnPalpitar">CHUTAR</button>
         </div>
     </>

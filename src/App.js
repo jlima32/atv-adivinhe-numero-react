@@ -8,7 +8,7 @@ import Resultado from './components/resultado/resultado';
 function App() {
   
   const inicial = 1;
-  const final = 4;
+  const final = 10;
   const [sorteado, setSorteado] = useState(null);
   const [palpite, setPalpite] = useState(null);
   const [tentativas, setTentativas] = useState(0);
@@ -18,9 +18,11 @@ function App() {
   }
 
   function chutar(){
-    const palpiteDigitado = document.querySelector('.palpiteText').value;
+    const palpiteInput = document.querySelector('.palpiteText');
+    const palpiteDigitado = palpiteInput.value;
     setPalpite(palpiteDigitado);
     setTentativas(tentativas + 1);
+    palpiteInput.value = '';
     
   }
 
@@ -36,11 +38,9 @@ function App() {
   return (
     <div className='container'>
       <Header />
-      {sorteado}
-      
       {palpite === null ? 
       <div>
-        <input type="text" name="palpite" className="palpiteText" placeholder={`Digite um numero entre ${inicial} e ${final}`} />
+        <input type="text" name="palpite" className="palpiteText" placeholder={`Digite um numero entre ${inicial} e ${final}`}/>
         <button type="submit" className="btnPalpitar" onClick={chutar}>CHUTAR</button>
       </div>
       : 

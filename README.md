@@ -6,7 +6,7 @@ Um jogo de adivinhação de números feito em React, o jogador precisa adivinhar
 
 ### Como jogar
 
-1. Ao iniciar o jogo um número aleatório (em um intervalo predefinido) é sorteado
+1. Ao iniciar o jogo, um número aleatório (em um intervalo predefinido) é sorteado
 2. O jogador insere um número no campo de texto e clica em CHUTAR
 3. Se o número digitado for igual ao número sorteado, uma mensagem de vitória é exibida junto com o número de tentativas.
 4. Se o número estiver errado, o jogador pode 'chutar' outro número.
